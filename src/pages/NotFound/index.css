@@ -1,0 +1,12 @@
+.notfound-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8fafc;
+}
+
+.notfound-heading {
+  font-size: 40px;
+  color: #ef4444;
+}

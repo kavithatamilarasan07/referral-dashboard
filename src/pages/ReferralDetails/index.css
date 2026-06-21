@@ -1,0 +1,23 @@
+.details-container {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 40px;
+}
+
+.details-card {
+  background-color: white;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+.details-heading {
+  margin-bottom: 20px;
+  color: #1e293b;
+}
+
+.detail-text {
+  font-size: 18px;
+  color: #475569;
+}
