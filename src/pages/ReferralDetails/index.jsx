@@ -1,16 +1,25 @@
-import {useNavigate, useParams} from 'react-router-dom'
+import {useParams, useNavigate} from 'react-router-dom'
 import './index.css'
 
 function ReferralDetails() {
   const {id} = useParams()
   const navigate = useNavigate()
-const newReferral = {
-  id: Date.now(),
-  userEmail: currentUser,
-  name,
-  service,
-  profit: Number(profit),
-}
+
+  const referrals =
+    JSON.parse(localStorage.getItem('referrals')) || []
+
+  const referral = referrals.find(
+    item => String(item.id) === id,
+  )
+
+  if (!referral) {
+    return (
+      <div className="details-container">
+        <h1>Referral Not Found</h1>
+      </div>
+    )
+  }
+
   return (
     <div className="details-container">
       <div className="details-card">
@@ -18,14 +27,41 @@ const newReferral = {
           Referral Details
         </h1>
 
-        <p className="detail-text">
-          Referral ID: {id}
-        </p>
+        <div className="detail-row">
+          <span className="detail-label">ID</span>
+          <span className="detail-value">
+            {referral.id}
+          </span>
+        </div>
 
-        <br />
+        <div className="detail-row">
+          <span className="detail-label">Name</span>
+          <span className="detail-value">
+            {referral.name}
+          </span>
+        </div>
+
+        <div className="detail-row">
+          <span className="detail-label">
+            Service
+          </span>
+          <span className="detail-value">
+            {referral.service}
+          </span>
+        </div>
+
+        <div className="detail-row">
+          <span className="detail-label">
+            Profit
+          </span>
+          <span className="detail-value">
+            ₹{referral.profit}
+          </span>
+        </div>
 
         <button
-          className="logout-btn"
+          type="button"
+          className="back-btn"
           onClick={() => navigate('/')}
         >
           Back to Dashboard
