@@ -28,3 +28,6 @@ A simple Referral Dashboard web application built using React.js to manage and t
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/kavithatamilarasan07/referral-dashboard.git
+
+## 🌐 Live Demo
+https://referral-dashboard-ii1xj6frg-kavithatamilarasan07s-projects.vercel.app/
